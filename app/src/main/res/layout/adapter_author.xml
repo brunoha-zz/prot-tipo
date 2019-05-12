@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="author"
+            type="com.github.model.AuthorModel" />
+    </data>
+
+    <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bgauthors"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp">
+
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/author_image"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:src="@drawable/imgauthoravatar"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/author_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:fontFamily="@font/chalkboard_bold"
+            android:text="@={author.author}"
+            app:layout_constraintBottom_toTopOf="@+id/author_description"
+            app:layout_constraintStart_toEndOf="@+id/author_image"
+            app:layout_constraintTop_toTopOf="@+id/author_image"
+            tools:text="Roberto" />
+
+        <TextView
+            android:id="@+id/author_description"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:maxLines="5"
+            android:text="@string/loren"
+            app:layout_constraintBottom_toBottomOf="@+id/author_image"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/author_image"
+            app:layout_constraintTop_toBottomOf="@id/author_name" />
+
+    </android.support.constraint.ConstraintLayout>
+</layout>
